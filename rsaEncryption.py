@@ -6,16 +6,24 @@ Created on Tue Feb  2 23:14:38 2021
 @author: hbueno2
 """
 def modInverse(a, m):
+    primeList = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 
+                 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+    primeNum=0
     for x in range(1, m):
-        if (((a%m) * (x%m)) % m == 1):
-            return x
+        print(x)
+        if(x==primeList[primeNum]):
+            primeNum+=1
+            if (((a%m) * (x%m)) % m == 1):
+                return x
+            elif (((a%m) * (-x%m)) % m == 1):
+                return -x
     return 1
 
-# # Driver Code
-# a = 7
-# m = 20
-# # Function call
-# modInverse(a, m)
+# Driver Code
+a = 13
+m = 20
+# Function call
+modInverse(a, m)
  
 def split(word):
     return [char for char in word]
@@ -50,12 +58,13 @@ def textRSA(word, num1, num2):    ## public(e,n) private(d,n)
     return txt_lst
 
 def main():
-  
+    
     p=3
     q=11
     print("P =",p, ", Q =",q)
     n,m = getNM(p,q)
-    print("N =",p, ", M =",q)
+    print("N =",n, ", M =",m)
+    # m=20
     e=13
     d=getDY(e, m)
     print("E =",e,", D=",d[0], ", Y=", d[1])
@@ -68,6 +77,6 @@ if __name__ == "__main__":
     main()
 
 
-
+pow(5,22) %47
 
 
