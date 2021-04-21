@@ -7,10 +7,11 @@ Created on Tue Feb  2 23:14:38 2021
 """
 def modInverse(a, m):
     primeList = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 
-                 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+                  53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 
+                  109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 
+                  173, 179, 181, 191, 193, 197, 199]
     primeNum=0
     for x in range(1, m):
-        print(x)
         if(x==primeList[primeNum]):
             primeNum+=1
             if (((a%m) * (x%m)) % m == 1):
@@ -19,11 +20,6 @@ def modInverse(a, m):
                 return -x
     return 1
 
-# Driver Code
-a = 13
-m = 20
-# Function call
-modInverse(a, m)
  
 def split(word):
     return [char for char in word]
@@ -59,13 +55,13 @@ def textRSA(word, num1, num2):    ## public(e,n) private(d,n)
 
 def main():
     
-    p=3
+    p=17
     q=11
     print("P =",p, ", Q =",q)
     n,m = getNM(p,q)
     print("N =",n, ", M =",m)
     # m=20
-    e=13
+    e=37
     d=getDY(e, m)
     print("E =",e,", D=",d[0], ", Y=", d[1])
     print("------------------")
@@ -77,6 +73,6 @@ if __name__ == "__main__":
     main()
 
 
-pow(5,22) %47
+
 
 
