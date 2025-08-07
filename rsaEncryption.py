@@ -5,6 +5,10 @@ Created on Tue Feb  2 23:14:38 2021
 
 @author: hbueno2
 """
+
+import os
+import json
+INPUTS = json.loads(os.getenv("FUNCTOR_INPUTS","{}"))
 def modInverse(a, m):
     primeList = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 
                   53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 
@@ -55,8 +59,10 @@ def textRSA(word, num1, num2):    ## public(e,n) private(d,n)
 
 def main():
     
-    p=17
-    q=11
+    # p=17
+    # q=11
+    p=INPUTS["p"]
+    q=INPUTS["q"]
     print("P =",p, ", Q =",q)
     n,m = getNM(p,q)
     print("N =",n, ", M =",m)
